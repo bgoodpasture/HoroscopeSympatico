@@ -3,9 +3,12 @@ class ZodiacsController < ApplicationController
   require 'uri'
   require 'json'
 
+  before_action :current_user
+
   def new
+    @users = User.all
     puts params.inspect
-    # @zodiac_name=Zodiac(params[:id])
+    # @zodiac_name=Zodiac.find(params[:id])
 
     # set url to read
     url = "http://horoscope-api.herokuapp.com/horoscope/today/"
@@ -19,5 +22,8 @@ class ZodiacsController < ApplicationController
     # response.basic_auth uid, apikey
 
     @prediction=JSON.parse(response)
+    if @current_user
+      @user_commnet =Journal.new(@current_user)
+    end
   end
 end

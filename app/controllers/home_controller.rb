@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @zodiacs=Zodiac.all
+    @zodiacs = Zodiac.all
   end
 end
