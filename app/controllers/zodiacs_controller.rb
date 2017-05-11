@@ -5,11 +5,11 @@ class ZodiacsController < ApplicationController
 
   def new
     puts params.inspect
-    @zodiac_name=params[:id]
+    # @zodiac_name=Zodiac(params[:id])
 
     # set url to read
     url = "http://horoscope-api.herokuapp.com/horoscope/today/"
-    url=url+@zodiac_name
+    url=url+params[:id]
 
     # encode URI using the URI constant
     uri = URI(url)
