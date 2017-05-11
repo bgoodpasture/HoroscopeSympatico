@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Zodiac.create([
+  { sign: "Aries" },
+  { sign: "Taurus" },
+  { sign: "Gemini" },
+  { sign: "Cancer" },
+  { sign: "Leo" },
+  { sign: "Virgo" },
+  { sign: "Libra" },
+  { sign: "Scorpio" },
+  { sign: "Sagittarius" },
+  { sign: "Capricorn" },
+  { sign: "Aquarius" },
+  { sign: "Pisces" }
+])
