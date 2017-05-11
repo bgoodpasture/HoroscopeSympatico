@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511151346) do
+ActiveRecord::Schema.define(version: 20170511162302) do
+
+  create_table "predicts", force: :cascade do |t|
+    t.integer  "zodiac_id"
+    t.datetime "pred_date"
+    t.text     "prediction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "predicts_users", id: false, force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "predict_id", null: false
+    t.text    "comment"
+    t.index ["predict_id", "user_id"], name: "index_predicts_users_on_predict_id_and_user_id"
+    t.index ["user_id", "predict_id"], name: "index_predicts_users_on_user_id_and_predict_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +46,12 @@ ActiveRecord::Schema.define(version: 20170511151346) do
     t.integer  "zodiac_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "zodiacs", force: :cascade do |t|
+    t.string   "sign"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
