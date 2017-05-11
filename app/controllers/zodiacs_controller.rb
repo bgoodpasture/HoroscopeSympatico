@@ -1,4 +1,4 @@
-class HoroApisController < ApplicationController
+class ZodiacsController < ApplicationController
   require 'net/http'
   require 'uri'
   require 'json'
