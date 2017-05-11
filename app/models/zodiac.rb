@@ -1,3 +1,3 @@
-class ZodiacsController < ActiveRecord::Base
+class Zodiac < ActiveRecord::Base
 
 end
