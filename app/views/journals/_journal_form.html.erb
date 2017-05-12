@@ -1,0 +1,7 @@
+<!-- <form id="journal" action="/journals/create" method="post"> -->
+    <%= hidden_field :user_id, value: "#{current_user["id"]}" %>
+    <%= hidden_field :predict_id, value: "#{@pred_id}" %>
+    <%= text_area :comment, value: ""%>
+    <% if current_user %>
+      <!-- <%= link_to("Save", journals_create_path, method: :create) %> -->
+    <% end %>

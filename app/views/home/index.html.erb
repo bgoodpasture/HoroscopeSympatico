@@ -1,7 +1,5 @@
-<h1>Home#index</h1>
+<h1>Your Daily Prediction</h1>
 
 <% @zodiacs.each do |z| %>
-  <span id="<%= z.sign %>"><%= link_to("Daily Prediction", new_zodiac_path(id: z.sign)) %></span>
+  <span id="<%= z.sign %>"><%= link_to("#{z[:sign]}", new_zodiac_path(id: z.sign)) %></span>
 <%end%>
-
-<p>Find me in app/views/home/index.html.erb</p>

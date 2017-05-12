@@ -1,5 +1,9 @@
+<input type="text" value="<%=@prediction["date"]%>">
+<textarea col="50" row="100"><%=@prediction["horoscope"]%></textarea>
+<input type="text" value="<%=@prediction["sunsign"]%>">
 
+<%= render "/journals/journal_form" %>
 
-  <input type="text" value="<%=@prediction["date"]%>">
-  <input type="text_area" value="<%=@prediction["horoscope"]%>" col="3" row="10">
-    <input type="text" value="<%=@prediction["sunsign"]%>">
+<% if !current_user %>
+  <%= link_to "Save", "/users/sign_up" %>
+<% end %>
