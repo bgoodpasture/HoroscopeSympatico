@@ -31,6 +31,11 @@
     <%= f.text_field :lastname, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :zodiac_id %><br />
+    <%= f.collection_select(:zodiac_id, Zodiac.all, :id, :sign) %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
