@@ -22,8 +22,10 @@ class ZodiacsController < ApplicationController
     # response.basic_auth uid, apikey
 
     @prediction=JSON.parse(response)
-    if @current_user
-      @user_commnet =Journal.new(@current_user)
+    if current_user
+      @user_comment = Journal.new(user_id: "#{current_user.id}")
+      puts "see me"
+      puts current_user.id
     end
   end
 end

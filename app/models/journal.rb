@@ -1,3 +1,3 @@
-class Journals < ActiveRecord::Base
+class Journal < ActiveRecord::Base
 
 end
