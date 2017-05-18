@@ -19,6 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 24.hours, :at => '4:00 am' do
-  runner "ZodiacsController.do_daily_all_predicts"
+set :output, {:error => './cron_error.log', :standard => './cron.log'}
+# set :job_template, nil
+# set :environment => 'staging'
+
+every 1.day, :at => '9:00pm' do
+  runner "ApplicationController.new.do_daily_all_predicts", :environment => 'development' ,:output => 'cron.log'
 end

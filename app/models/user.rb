@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_one :zodiac
   has_many :journals
   has_many :predicts, through: :journals
+  # validates :zodiac_id, presence: true
 end

@@ -54,3 +54,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Using to run daily predict table save.
 gem 'whenever', :require => false
+#  Using for styling
+# gem 'bootstrap', '~> 4.0.0.alpha6'
+#  Use in conjuction with Boostrap for tooltips and popovers
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
+
+# GSAP gem for use with ScrollMagic
+gem 'greensock-rails'

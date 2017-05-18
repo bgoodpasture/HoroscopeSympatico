@@ -1,6 +1,5 @@
-class Zodiac < ActiveRecord::Base
+class Zodiac < ApplicationRecord
   belongs_to :user
   belongs_to :predict
 
-  # accepts_nested_attributes_for :journal
 end
